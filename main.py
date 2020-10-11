@@ -4,7 +4,6 @@ import threading
 import time
 from datetime import datetime
 
-import keyboard
 import pytz
 
 TGREEN = '\033[32m'  # Green Text
@@ -12,8 +11,6 @@ TGREEN = '\033[32m'  # Green Text
 
 def print_time():
     while True:
-        if keyboard.is_pressed('q'):
-            sys.exit()
         UTC = pytz.utc
         Asia = pytz.timezone('Asia/Shanghai')
         New_York = pytz.timezone('America/New_York')
