@@ -6,18 +6,8 @@ from datetime import datetime
 
 import keyboard
 import pytz
-from beeply import notes
 
-mybeep = notes.beeps()
 TGREEN = '\033[32m'  # Green Text
-
-
-def beep():
-    while True:
-        if keyboard.is_pressed('q'):
-            sys.exit()
-        mybeep.hear('B', 100)
-        time.sleep(0.2)
 
 
 def print_time():
@@ -59,9 +49,7 @@ def print_time():
 
 
 t1 = threading.Thread(target=print_time)
-t2 = threading.Thread(target=beep)
 
 # starting thread 1
 t1.start()
 # starting thread 2
-t2.start()
